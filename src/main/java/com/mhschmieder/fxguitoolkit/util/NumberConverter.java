@@ -66,7 +66,7 @@ public class NumberConverter extends StringConverter< Number > {
         _maximumValue = maximumValue;
     }
 
-    // :NOTE: make sure to strip the Measurement Unit label before converting to
+    // NOTE: make sure to strip the Measurement Unit label before converting to
     // a number.
     @Override
     public Number fromString( final String string ) {

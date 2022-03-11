@@ -69,7 +69,7 @@ public final class MeasurementUnits {
     private final TemperatureUnit                   temperatureUnitDefault;
     private final PressureUnit                      pressureUnitDefault;
 
-    // :NOTE: These fields have to follow JavaFX Property Beans conventions.
+    // NOTE: These fields have to follow JavaFX Property Beans conventions.
     public BooleanBinding                           distanceUnitChanged;
     public BooleanBinding                           angleUnitChanged;
     public BooleanBinding                           weightUnitChanged;
