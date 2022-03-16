@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxcommonstoolkit
  */
-package com.mhschmieder.fxguitoolkit.concurrent;
+package com.mhschmieder.fxcommonstoolkit.concurrent;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

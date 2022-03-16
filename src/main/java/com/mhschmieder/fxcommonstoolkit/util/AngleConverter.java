@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxcommonstoolkit
  */
-package com.mhschmieder.fxguitoolkit.util;
+package com.mhschmieder.fxcommonstoolkit.util;
 
 import java.text.NumberFormat;
 
