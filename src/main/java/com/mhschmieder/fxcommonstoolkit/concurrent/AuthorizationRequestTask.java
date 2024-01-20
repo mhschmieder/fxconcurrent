@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2024 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
 import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
 import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.security.PredictionLoginCredentials;
+import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 
 import javafx.concurrent.Task;
@@ -46,7 +46,7 @@ import javafx.stage.Screen;
 public final class AuthorizationRequestTask extends Task< AuthorizationServerResponse > {
 
     /** The Request Type name that this task will pass to the server. */
-    @SuppressWarnings("nls") public static String AUTHORIZATION_REQUEST_TYPE = "AuthorizeUser";
+    @SuppressWarnings("nls") public static String AUTHORIZATION_REQUEST_TYPE = "Authorize User";
 
     /** Cache the Login Credentials to use for authorizing the request. */
     protected LoginCredentials                    loginCredentials;
@@ -87,7 +87,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
                                                                                                            null,
                                                                                                            true,
                                                                                                            null,
-                                                                                                           PredictionLoginCredentials.EXPIRATION_DATE_DEFAULT,
+                                                                                                           ServerLoginCredentials.EXPIRATION_DATE_DEFAULT,
                                                                                                            null,
                                                                                                            HttpURLConnection.HTTP_UNAVAILABLE );
             return authorizationServerResponse;
@@ -119,7 +119,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
                                                                                                            servletErrorMessage,
                                                                                                            true,
                                                                                                            null,
-                                                                                                           PredictionLoginCredentials.EXPIRATION_DATE_DEFAULT,
+                                                                                                           ServerLoginCredentials.EXPIRATION_DATE_DEFAULT,
                                                                                                            null,
                                                                                                            HttpURLConnection.HTTP_UNAVAILABLE );
             return authorizationServerResponse;
@@ -139,5 +139,4 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
 
         return authorizationServerResponse;
     }
-
 }

@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2024 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,32 +33,28 @@ package com.mhschmieder.fxcommonstoolkit.concurrent;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.mhschmieder.commonstoolkit.net.PredictionServerResponse;
 import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 
 import javafx.concurrent.Service;
 
 /**
- * This is a base class for commonality between server prediction requests.
+ * Abstract base class for service commonality between server requests.
  */
-public abstract class PredictionRequestService extends Service< PredictionServerResponse > {
+public abstract class ServerRequestService< T > extends Service< T > {
 
     /**
-     * Cache the Server Request Properties (Build ID, Client Type, etc.).
+     * Cache the Server Request Properties (Build ID, Request Type, etc.).
      */
-    public ServerRequestProperties serverRequestProperties;
+    protected final ServerRequestProperties      serverRequestProperties;
 
     /**
      * Cache the Client Properties (System Type, Locale, etc.).
      */
-    public ClientProperties        clientProperties;
+    public ClientProperties                    clientProperties;
 
-    public PredictionRequestService( final ServerRequestProperties pServerRequestProperties,
-                                     final ClientProperties pClientProperties ) {
-        // Always call the superclass constructor first!
-        super();
-
+    public ServerRequestService( final ServerRequestProperties pServerRequestProperties,
+                                 final ClientProperties pClientProperties ) {
         serverRequestProperties = pServerRequestProperties;
         clientProperties = pClientProperties;
 
@@ -68,5 +64,4 @@ public abstract class PredictionRequestService extends Service< PredictionServer
         final ExecutorService executorService = Executors.newCachedThreadPool();
         setExecutor( executorService );
     }
-
 }

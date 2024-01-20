@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2024 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,29 +30,18 @@
  */
 package com.mhschmieder.fxcommonstoolkit.concurrent;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
 import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 
-import javafx.concurrent.Service;
 import javafx.scene.control.Dialog;
 import javafx.util.Pair;
 
-public final class AuthorizationRequestService extends Service< AuthorizationServerResponse > {
-
-    /**
-     * Cache the Server Request Properties (Build ID, Client Type, etc.).
-     */
-    private final ServerRequestProperties      serverRequestProperties;
-
-    /**
-     * Cache the Client Properties (System Type, Locale, etc.).
-     */
-    public ClientProperties                    clientProperties;
+/**
+ * Implementation class for specifics of authorization server requests.
+ */
+public final class AuthorizationRequestService extends ServerRequestService< AuthorizationServerResponse > {
 
     /** Cache the Login Credentials to use for authorizing the request. */
     protected LoginCredentials                 loginCredentials;
@@ -63,21 +52,13 @@ public final class AuthorizationRequestService extends Service< AuthorizationSer
     public AuthorizationRequestService( final ServerRequestProperties pServerRequestProperties,
                                         final ClientProperties pClientProperties ) {
         // Always call the superclass constructor first!
-        super();
-
-        serverRequestProperties = pServerRequestProperties;
-        clientProperties = pClientProperties;
+        super( pServerRequestProperties,
+               pClientProperties );
 
         loginCredentials = new LoginCredentials();
 
         // Not all authorization requests are launched from Login Dialogs.
         loginDialog = null;
-
-        // Set the Service to use a Cached Thread Pool vs. the default daemon,
-        // to protect against run-time cross-threading issues (especially in a
-        // hybrid app), suspended threads, and for better performance.
-        final ExecutorService executorService = Executors.newCachedThreadPool();
-        setExecutor( executorService );
     }
 
     @Override
@@ -91,29 +72,32 @@ public final class AuthorizationRequestService extends Service< AuthorizationSer
         return authorizationrequestTask;
     }
 
-    public Dialog< Pair< String, String > > getLoginDialog() {
-        return loginDialog;
-    }
-
-    public void requestUserAuthorization( final LoginCredentials loginCredentials ) {
+    public void requestUserAuthorization( final LoginCredentials pLoginCredentials ) {
         // Disregard empty, null, or invalid Login Credentials.
-        if ( !loginCredentials.isValid() ) {
+        if ( !pLoginCredentials.isValid() ) {
             return;
         }
 
         // Make sure the authorization parameter sources are up to date.
-        setLoginCredentials( loginCredentials );
+        setLoginCredentials( pLoginCredentials );
 
         // Restart the Service as this also cancels old tasks and then resets.
         restart();
     }
 
+    public LoginCredentials getLoginCredentials() {
+        return loginCredentials;
+    }
+    
     public void setLoginCredentials( final LoginCredentials pLoginCredentials ) {
         loginCredentials = pLoginCredentials;
+    }
+
+    public Dialog< Pair< String, String > > getLoginDialog() {
+        return loginDialog;
     }
 
     public void setLoginDialog( final Dialog< Pair< String, String > > pLoginDialog ) {
         loginDialog = pLoginDialog;
     }
-
 }
