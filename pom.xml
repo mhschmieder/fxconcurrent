@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mhschmieder</groupId>
-    <artifactId>fxcommonstoolkit</artifactId>
+    <artifactId>fxconcurrent</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>FxCommonsToolkit</name>
-    <url>https://github.com/mhschmieder/fxcommonstoolkit</url>
-    <description>Utilities and custom classes for Java that require JavaFX.</description>
+    <url>https://github.com/mhschmieder/fxconcurrent </url>
+    <description>Boilerplate framework for using JavaFX Concurrent API for Client/Server calls and Task Progress (via ControlsFX).</description>
 
     <licenses>
         <license>
@@ -21,9 +21,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mhschmieder/fxcommonstoolkit</url>
-        <connection>scm:git:git://github.com/mhschmieder/fxcommonstoolkit.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/fxcommonstoolkit.git</developerConnection>
+        <url>https://github.com/mhschmieder/fxconcurrent </url>
+        <connection>scm:git:git://github.com/mhschmieder/fxconcurrent.git</connection>
+        <developerConnection>scm:git:git@github.com:mhschmieder/fxconcurrent.git</developerConnection>
     </scm>
 
     <developers>

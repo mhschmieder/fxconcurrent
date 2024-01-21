@@ -25,25 +25,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="/commonstoolkit"/>
 	<classpathentry kind="src" path="/physicstoolkit"/>
-	<classpathentry kind="lib" path="/Users/mhs/.m2/repository/org/controlsfx/controlsfx/8.40.18/controlsfx-8.40.18.jar" sourcepath="/Users/mhs/.m2/repository/org/controlsfx/controlsfx/8.40.18/controlsfx-8.40.18-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.controlsfx"/>
-			<attribute name="maven.artifactId" value="controlsfx"/>
-			<attribute name="maven.version" value="8.40.18"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="src" path="/fxguitoolkit"/>
-	<classpathentry kind="lib" path="/Users/mhs/.m2/repository/com/mhschmieder/fxgraphicstoolkit/0.1-SNAPSHOT/fxgraphicstoolkit-0.1-SNAPSHOT.jar" sourcepath="/Users/mhs/.m2/repository/com/mhschmieder/fxgraphicstoolkit/0.1-SNAPSHOT/fxgraphicstoolkit-0.1-SNAPSHOT-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="javadoc_location" value="jar:file:/Users/mhs/.m2/repository/com/mhschmieder/fxgraphicstoolkit/0.1-SNAPSHOT/fxgraphicstoolkit-0.1-SNAPSHOT-javadoc.jar!/"/>
-			<attribute name="maven.groupId" value="com.mhschmieder"/>
-			<attribute name="maven.artifactId" value="fxgraphicstoolkit"/>
-			<attribute name="maven.version" value="0.1-SNAPSHOT"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
