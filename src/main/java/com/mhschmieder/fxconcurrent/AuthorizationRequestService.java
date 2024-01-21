@@ -21,19 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxCommonsToolkit Library
+ * This file is part of the FxConcurrent Library
  *
- * You should have received a copy of the MIT License along with the
- * FxCommonsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxConcurrent
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxcommonstoolkit
+ * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxcommonstoolkit.concurrent;
+package com.mhschmieder.fxconcurrent;
 
 import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
-import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
+import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
 
 import javafx.scene.control.Dialog;
 import javafx.util.Pair;
@@ -41,7 +42,7 @@ import javafx.util.Pair;
 /**
  * Implementation class for specifics of authorization server requests.
  */
-public final class AuthorizationRequestService extends ServerRequestService< AuthorizationServerResponse > {
+public class AuthorizationRequestService extends ServerRequestService< AuthorizationServerResponse > {
 
     /** Cache the Login Credentials to use for authorizing the request. */
     protected LoginCredentials                 loginCredentials;
@@ -49,7 +50,7 @@ public final class AuthorizationRequestService extends ServerRequestService< Aut
     /** Reference to a Login Dialog that instigates the authorization. */
     protected Dialog< Pair< String, String > > loginDialog;
 
-    public AuthorizationRequestService( final ServerRequestProperties pServerRequestProperties,
+    public AuthorizationRequestService( final HttpServletRequestProperties pServerRequestProperties,
                                         final ClientProperties pClientProperties ) {
         // Always call the superclass constructor first!
         super( pServerRequestProperties,
@@ -59,6 +60,9 @@ public final class AuthorizationRequestService extends ServerRequestService< Aut
 
         // Not all authorization requests are launched from Login Dialogs.
         loginDialog = null;
+        
+        // Add callbacks for the Service API status tracking.
+        addCallbacks();
     }
 
     @Override
@@ -66,7 +70,7 @@ public final class AuthorizationRequestService extends ServerRequestService< Aut
         // Create a new Authorization Request Task.
         final AuthorizationRequestTask authorizationrequestTask =
                                                                 new AuthorizationRequestTask( loginCredentials,
-                                                                                              serverRequestProperties,
+                                                                                              httpServletRequestProperties,
                                                                                               clientProperties );
 
         return authorizationrequestTask;
@@ -99,5 +103,25 @@ public final class AuthorizationRequestService extends ServerRequestService< Aut
 
     public void setLoginDialog( final Dialog< Pair< String, String > > pLoginDialog ) {
         loginDialog = pLoginDialog;
+    }
+    
+    /**
+     * Add callbacks for the Service API status tracking, to handle the most
+     * useful status values such as: scheduled, cancelled, failed, succeeded.
+     * <p>
+     * NOTE: This is meant to cover boilerplate behavior to avoid copy/paste
+     *  in downstream clients, especially regarding the Server Login Dialog.
+     */
+    protected void addCallbacks() {
+        // TODO: Tie this into the Login Dialog as a text field validator?
+        setOnFailed( t -> {
+            // Forward any service exceptions to the established logger.
+            final Throwable exception = getException();
+            exception.printStackTrace();
+
+            // Alert the user that there were problems with the service.
+            final String statusMessage = exception.toString();
+            LoginDialogUtilities.showLoginWarningDialog( statusMessage );
+        } );
     }
 }

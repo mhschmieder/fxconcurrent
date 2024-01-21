@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxCommonsToolkit Library
+ * This file is part of the FxConcurrent Library
  *
- * You should have received a copy of the MIT License along with the
- * FxCommonsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxConcurrent
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxcommonstoolkit
+ * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxcommonstoolkit.concurrent;
+package com.mhschmieder.fxconcurrent;
 
 import java.net.HttpURLConnection;
 
@@ -36,7 +36,7 @@ import com.mhschmieder.commonstoolkit.io.IoUtilities;
 import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
 import com.mhschmieder.commonstoolkit.net.DataServerResponse;
 import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
-import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
+import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.commonstoolkit.util.DataUpdateType;
@@ -53,7 +53,7 @@ public class DataRequestTask extends Task< DataServerResponse > {
     /**
      * Cache the Server Request Properties (Build ID, Request Type, etc.).
      */
-    protected final ServerRequestProperties serverRequestProperties;
+    protected final HttpServletRequestProperties httpServletRequestProperties;
     
     /**
      * Cache the Data Request Parameters (Login Credentials, Data Type, etc.).
@@ -65,13 +65,13 @@ public class DataRequestTask extends Task< DataServerResponse > {
      */
     public final ClientProperties clientProperties;
 
-    public DataRequestTask( final ServerRequestProperties pServerRequestProperties,
+    public DataRequestTask( final HttpServletRequestProperties pServerRequestProperties,
                             final DataRequestParameters pDataRequestParameters,
                             final ClientProperties pClientProperties ) {
         // Always call the super-constructor first!
         super();
 
-        serverRequestProperties = pServerRequestProperties;
+        httpServletRequestProperties = pServerRequestProperties;
         dataRequestParameters = pDataRequestParameters;
         clientProperties = pClientProperties;
     }
@@ -100,7 +100,7 @@ public class DataRequestTask extends Task< DataServerResponse > {
             // TODO: Throw exceptions with these messages instead, so we can
             //  consolidate the handling to the failure callback?
             final HttpURLConnection httpURLConnection = NetworkUtilities
-                    .getHttpURLConnection( serverRequestProperties.urlHttpServlet );
+                    .getHttpURLConnection( httpServletRequestProperties.httpServletUrl );
             if ( httpURLConnection == null ) {
                 serverStatusMessage = "Server Connection Error: Data Service Not Found"; 
                 dataServerResponse.setServerStatusMessage( serverStatusMessage );
@@ -123,7 +123,7 @@ public class DataRequestTask extends Task< DataServerResponse > {
             NetworkUtilities.addServerRequestProperties( httpURLConnection,
                                                          getDataRequestType(),
                                                          getLoginCredentials(),
-                                                         serverRequestProperties,
+                                                         httpServletRequestProperties,
                                                          clientProperties,
                                                          screenWidth,
                                                          screenHeight );

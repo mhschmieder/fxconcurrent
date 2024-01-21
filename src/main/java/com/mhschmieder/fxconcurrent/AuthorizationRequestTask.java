@@ -21,20 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxCommonsToolkit Library
+ * This file is part of the FxConcurrent Library
  *
- * You should have received a copy of the MIT License along with the
- * FxCommonsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxConcurrent
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxcommonstoolkit
+ * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxcommonstoolkit.concurrent;
+package com.mhschmieder.fxconcurrent;
 
 import java.net.HttpURLConnection;
 
 import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
 import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
-import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
+import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
@@ -43,7 +43,7 @@ import javafx.concurrent.Task;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 
-public final class AuthorizationRequestTask extends Task< AuthorizationServerResponse > {
+public class AuthorizationRequestTask extends Task< AuthorizationServerResponse > {
 
     /** The Request Type name that this task will pass to the server. */
     @SuppressWarnings("nls") public static String AUTHORIZATION_REQUEST_TYPE = "Authorize User";
@@ -54,7 +54,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
     /**
      * Cache the Server Request Properties (Build ID, Client Type, etc.).
      */
-    public ServerRequestProperties                serverRequestProperties;
+    public HttpServletRequestProperties                httpServletRequestProperties;
 
     /**
      * Cache the Client Properties (System Type, Locale, etc.).
@@ -62,7 +62,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
     public ClientProperties                       clientProperties;
 
     public AuthorizationRequestTask( final LoginCredentials pLoginCredentials,
-                                     final ServerRequestProperties pServerRequestProperties,
+                                     final HttpServletRequestProperties pServerRequestProperties,
                                      final ClientProperties pClientProperties ) {
         // Always call the super-constructor first!
         super();
@@ -70,7 +70,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
         // TODO: Wrap the Login Credentials in an AuthorizationRequestContext
         // class, for future-proof API expansion later on?
         loginCredentials = pLoginCredentials;
-        serverRequestProperties = pServerRequestProperties;
+        httpServletRequestProperties = pServerRequestProperties;
         clientProperties = pClientProperties;
     }
 
@@ -78,7 +78,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
     protected AuthorizationServerResponse call() throws InterruptedException {
         // Open a connection to the Authorization Servlet.
         final HttpURLConnection httpURLConnection = NetworkUtilities
-                .getHttpURLConnection( serverRequestProperties.urlHttpServlet );
+                .getHttpURLConnection( httpServletRequestProperties.httpServletUrl );
         if ( httpURLConnection == null ) {
             final String urlConnectionStatus =
                                              "Server Connection Error: Authorization Service Not Found"; //$NON-NLS-1$
@@ -105,7 +105,7 @@ public final class AuthorizationRequestTask extends Task< AuthorizationServerRes
         NetworkUtilities.addServerRequestProperties( httpURLConnection,
                                                      AUTHORIZATION_REQUEST_TYPE,
                                                      loginCredentials,
-                                                     serverRequestProperties,
+                                                     httpServletRequestProperties,
                                                      clientProperties,
                                                      screenWidth,
                                                      screenHeight );

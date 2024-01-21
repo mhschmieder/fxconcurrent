@@ -21,19 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxCommonsToolkit Library
+ * This file is part of the FxConcurrent Library
  *
- * You should have received a copy of the MIT License along with the
- * FxCommonsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxConcurrent
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxcommonstoolkit
+ * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxcommonstoolkit.concurrent;
+package com.mhschmieder.fxconcurrent;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
+import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 
 import javafx.concurrent.Service;
@@ -46,16 +46,16 @@ public abstract class ServerRequestService< T > extends Service< T > {
     /**
      * Cache the Server Request Properties (Build ID, Request Type, etc.).
      */
-    protected final ServerRequestProperties      serverRequestProperties;
+    protected final HttpServletRequestProperties httpServletRequestProperties;
 
     /**
      * Cache the Client Properties (System Type, Locale, etc.).
      */
-    public ClientProperties                    clientProperties;
+    public ClientProperties clientProperties;
 
-    public ServerRequestService( final ServerRequestProperties pServerRequestProperties,
+    public ServerRequestService( final HttpServletRequestProperties pHttpServletRequestProperties,
                                  final ClientProperties pClientProperties ) {
-        serverRequestProperties = pServerRequestProperties;
+        httpServletRequestProperties = pHttpServletRequestProperties;
         clientProperties = pClientProperties;
 
         // Set the Service to use a Cached Thread Pool vs. the default daemon,

@@ -21,18 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxCommonsToolkit Library
+ * This file is part of the FxConcurrent Library
  *
- * You should have received a copy of the MIT License along with the
- * FxCommonsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxConcurrent
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxcommonstoolkit
+ * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxcommonstoolkit.concurrent;
+package com.mhschmieder.fxconcurrent;
 
 import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
 import com.mhschmieder.commonstoolkit.net.DataServerResponse;
-import com.mhschmieder.commonstoolkit.net.ServerRequestProperties;
+import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 
 /**
@@ -40,13 +40,12 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
  */
 public abstract class DataRequestService extends ServerRequestService< DataServerResponse > {
 
-   
     /**
      * Cache the Data Request Parameters (Login Credentials, Data Type, etc.).
      */
     protected DataRequestParameters dataRequestParameters;
 
-    public DataRequestService( final ServerRequestProperties pServerRequestProperties,
+    public DataRequestService( final HttpServletRequestProperties pServerRequestProperties,
                                final ClientProperties pClientProperties ) {
         // Always call the superclass constructor first!
         super( pServerRequestProperties,
