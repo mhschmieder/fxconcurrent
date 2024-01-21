@@ -59,7 +59,7 @@ public final class LoginDialogUtilities {
                                            final String productName,
                                            final Locale locale,
                                            final AuthorizationRequestService authorizationRequestService,
-                                           final Callback< Pair< String, String >, Void > authenticator ) {
+                                           final boolean useAuthenticator ) {
         // Block on the Login, passing in any cached Login Credentials.
         final String title = MessageFactory.getLoginCredentialsTitle( loginType );
         final String headerText = MessageFactory.getLoginCredentialsMasthead( loginType,
@@ -67,6 +67,9 @@ public final class LoginDialogUtilities {
         final Pair< String, String > initialUserInfo = new Pair<>( loginCredentials.getUserName(),
                                                                    loginCredentials.getPassword() );
 
+        final Callback< Pair< String, String >, Void > authenticator = ( useAuthenticator && ( authorizationRequestService != null ) )
+                ? authorizationRequestService.makeAuthenticator()
+                : null; 
         final XLoginDialog loginDialog = new XLoginDialog( title,
                                                            headerText,
                                                            locale,

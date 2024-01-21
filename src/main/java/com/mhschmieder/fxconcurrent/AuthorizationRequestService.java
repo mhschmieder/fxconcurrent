@@ -37,6 +37,7 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
 
 import javafx.scene.control.Dialog;
+import javafx.util.Callback;
 import javafx.util.Pair;
 
 /**
@@ -103,6 +104,19 @@ public class AuthorizationRequestService extends ServerRequestService< Authoriza
 
     public void setLoginDialog( final Dialog< Pair< String, String > > pLoginDialog ) {
         loginDialog = pLoginDialog;
+    }
+    
+    public Callback< Pair< String, String >, Void > makeAuthenticator() {
+        final Callback< Pair< String, String >, Void > authenticator = userInfo -> {
+            // Contact the server's authorization service, if available, to
+            // authorize the user.
+            final LoginCredentials loginCredentialsCandidate = new LoginCredentials( userInfo.getKey(),
+                                                                                     userInfo.getValue() );
+            requestUserAuthorization( loginCredentialsCandidate );
+            return null;
+        };
+        
+        return authenticator;
     }
     
     /**
