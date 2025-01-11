@@ -33,8 +33,8 @@ package com.mhschmieder.fxconcurrent;
 import java.net.HttpURLConnection;
 
 import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
-import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
 import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
+import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
