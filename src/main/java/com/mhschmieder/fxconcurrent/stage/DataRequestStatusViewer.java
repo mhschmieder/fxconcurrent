@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2024 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -56,6 +56,10 @@ public final class DataRequestStatusViewer extends XStage {
     public static final String DATA_REQUEST_STATUS_VIEWER_TITLE_DEFAULT = "Data Request Status";
 
     // Declare the main content pane for the primary task status layout.
+    // NOTE: This is not a good progress tracker for tasks that take more
+    //  than a few minutes, as the resolution of increments is too coarse.
+    //  For such applications, it is better to use progress bars with a
+    //  count of steps completed and percentage of total steps.
     protected TaskProgressView< DataRequestTask > taskProgressView;
 
     // Declare a callback that will be used to determine the task icon.
