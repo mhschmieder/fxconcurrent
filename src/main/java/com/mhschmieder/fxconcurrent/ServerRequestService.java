@@ -30,13 +30,12 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-
 import javafx.concurrent.Service;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Abstract base class for service commonality between server requests.

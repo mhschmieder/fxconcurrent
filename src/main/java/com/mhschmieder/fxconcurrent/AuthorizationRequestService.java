@@ -35,7 +35,6 @@ import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
-
 import javafx.scene.control.Dialog;
 import javafx.util.Callback;
 import javafx.util.Pair;

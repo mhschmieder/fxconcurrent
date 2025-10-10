@@ -30,18 +30,17 @@
  */
 package com.mhschmieder.fxconcurrent.dialog;
 
-import java.util.Locale;
-import java.util.Optional;
-
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.security.LoginType;
 import com.mhschmieder.fxconcurrent.AuthorizationRequestService;
 import com.mhschmieder.fxguitoolkit.MessageFactory;
 import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
 import com.mhschmieder.fxguitoolkit.dialog.XLoginDialog;
-
 import javafx.util.Callback;
 import javafx.util.Pair;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This is a utility class for showing dialogs related to security features such

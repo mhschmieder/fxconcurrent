@@ -30,18 +30,17 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import java.net.HttpURLConnection;
-
 import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
 import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-
 import javafx.concurrent.Task;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
+
+import java.net.HttpURLConnection;
 
 public class AuthorizationRequestTask extends Task< AuthorizationServerResponse > {
 

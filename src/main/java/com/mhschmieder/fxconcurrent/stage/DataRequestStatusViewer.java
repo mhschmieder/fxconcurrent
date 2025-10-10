@@ -30,21 +30,19 @@
  */
 package com.mhschmieder.fxconcurrent.stage;
 
-import org.controlsfx.control.TaskProgressView;
-
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.commonstoolkit.util.SystemType;
 import com.mhschmieder.fxconcurrent.DataRequestTask;
 import com.mhschmieder.fxgraphicstoolkit.image.ImageUtilities;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
-
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.util.Callback;
+import org.controlsfx.control.TaskProgressView;
 
 /**
  * This is a window-level wrapper for a Task Progress View, which can show

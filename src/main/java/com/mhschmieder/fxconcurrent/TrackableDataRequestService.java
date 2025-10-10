@@ -35,7 +35,6 @@ import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
 import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
-
 import javafx.concurrent.Task;
 
 /**

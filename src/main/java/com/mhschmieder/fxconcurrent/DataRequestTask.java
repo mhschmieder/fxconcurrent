@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import java.net.HttpURLConnection;
-
 import com.mhschmieder.commonstoolkit.io.IoUtilities;
 import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
 import com.mhschmieder.commonstoolkit.net.DataServerResponse;
@@ -40,10 +38,11 @@ import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
 import com.mhschmieder.commonstoolkit.security.LoginCredentials;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.commonstoolkit.util.DataUpdateType;
-
 import javafx.concurrent.Task;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
+
+import java.net.HttpURLConnection;
 
 /**
  * Base class for task commonality between server data requests.
