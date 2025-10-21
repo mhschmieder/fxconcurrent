@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
-import com.mhschmieder.commonstoolkit.net.DataServerResponse;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.jcommons.net.DataRequestParameters;
+import com.mhschmieder.jcommons.net.DataServerResponse;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.util.ClientProperties;
 
 /**
  * Abstract base class for service commonality between server data requests.

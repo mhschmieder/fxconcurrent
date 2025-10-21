@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
-import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.security.ServerLoginCredentials;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.jcommons.net.AuthorizationServerResponse;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.net.NetworkUtilities;
+import com.mhschmieder.jcommons.security.LoginCredentials;
+import com.mhschmieder.jcommons.security.ServerLoginCredentials;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.concurrent.Task;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;

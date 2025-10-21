@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.concurrent.Service;
 
 import java.util.concurrent.ExecutorService;

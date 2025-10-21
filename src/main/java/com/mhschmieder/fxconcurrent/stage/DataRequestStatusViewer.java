@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxconcurrent.stage;
 
-import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.commonstoolkit.util.SystemType;
 import com.mhschmieder.fxconcurrent.DataRequestTask;
 import com.mhschmieder.fxgraphicstoolkit.image.ImageUtilities;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.jcommons.branding.ProductBranding;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jcommons.util.SystemType;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;

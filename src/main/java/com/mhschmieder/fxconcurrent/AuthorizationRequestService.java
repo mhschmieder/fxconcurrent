@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import com.mhschmieder.commonstoolkit.net.AuthorizationServerResponse;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
+import com.mhschmieder.jcommons.net.AuthorizationServerResponse;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.security.LoginCredentials;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.Dialog;
 import javafx.util.Callback;
 import javafx.util.Pair;

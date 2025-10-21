@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxconcurrent.dialog;
 
-import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.security.LoginType;
 import com.mhschmieder.fxconcurrent.AuthorizationRequestService;
 import com.mhschmieder.fxguitoolkit.MessageFactory;
 import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
 import com.mhschmieder.fxguitoolkit.dialog.XLoginDialog;
+import com.mhschmieder.jcommons.security.LoginCredentials;
+import com.mhschmieder.jcommons.security.LoginType;
 import javafx.util.Callback;
 import javafx.util.Pair;
 

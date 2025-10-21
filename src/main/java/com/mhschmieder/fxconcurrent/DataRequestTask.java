@@ -30,14 +30,14 @@
  */
 package com.mhschmieder.fxconcurrent;
 
-import com.mhschmieder.commonstoolkit.io.IoUtilities;
-import com.mhschmieder.commonstoolkit.net.DataRequestParameters;
-import com.mhschmieder.commonstoolkit.net.DataServerResponse;
-import com.mhschmieder.commonstoolkit.net.HttpServletRequestProperties;
-import com.mhschmieder.commonstoolkit.net.NetworkUtilities;
-import com.mhschmieder.commonstoolkit.security.LoginCredentials;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.commonstoolkit.util.DataUpdateType;
+import com.mhschmieder.jcommons.io.IoUtilities;
+import com.mhschmieder.jcommons.net.DataRequestParameters;
+import com.mhschmieder.jcommons.net.DataServerResponse;
+import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
+import com.mhschmieder.jcommons.net.NetworkUtilities;
+import com.mhschmieder.jcommons.security.LoginCredentials;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jcommons.util.DataUpdateType;
 import javafx.concurrent.Task;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
