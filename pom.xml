@@ -59,12 +59,12 @@
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>fxgraphicstoolkit</artifactId>
+            <artifactId>fxgraphics</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>fxguitoolkit</artifactId>
+            <artifactId>fxcontrols</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->

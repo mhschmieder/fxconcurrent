@@ -31,8 +31,8 @@
 package com.mhschmieder.fxconcurrent.stage;
 
 import com.mhschmieder.fxconcurrent.DataRequestTask;
-import com.mhschmieder.fxgraphicstoolkit.image.ImageUtilities;
-import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.fxcontrols.stage.XStage;
+import com.mhschmieder.fxgraphics.image.ImageUtilities;
 import com.mhschmieder.jcommons.branding.ProductBranding;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jcommons.util.SystemType;

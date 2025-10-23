@@ -31,7 +31,7 @@
 package com.mhschmieder.fxconcurrent;
 
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
-import com.mhschmieder.fxguitoolkit.dialog.DialogUtilities;
+import com.mhschmieder.fxcontrols.dialog.DialogUtilities;
 import com.mhschmieder.jcommons.net.DataServerResponse;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
 import com.mhschmieder.jcommons.util.ClientProperties;
