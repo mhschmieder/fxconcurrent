@@ -31,9 +31,9 @@
 package com.mhschmieder.fxconcurrent.dialog;
 
 import com.mhschmieder.fxconcurrent.AuthorizationRequestService;
-import com.mhschmieder.fxcontrols.dialog.DialogUtilities;
-import com.mhschmieder.fxcontrols.dialog.XLoginDialog;
 import com.mhschmieder.fxcontrols.util.MessageFactory;
+import com.mhschmieder.fxgui.dialog.DialogUtilities;
+import com.mhschmieder.fxgui.dialog.XLoginDialog;
 import com.mhschmieder.jcommons.security.LoginCredentials;
 import com.mhschmieder.jcommons.security.LoginType;
 import javafx.util.Callback;
@@ -98,5 +98,4 @@ public final class LoginDialogUtilities {
         final String title = MessageFactory.getLoginErrorTitle();
         DialogUtilities.showWarningAlert( message, masthead, title );
     }
-
 }
