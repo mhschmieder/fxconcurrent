@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxconcurrent.service;
 
-import com.mhschmieder.fxconcurrent.task.DataRequestTask;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
+import com.mhschmieder.fxconcurrent.task.DataRequestTask;
 import com.mhschmieder.fxgui.dialog.DialogUtilities;
 import com.mhschmieder.jcommons.net.DataServerResponse;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;

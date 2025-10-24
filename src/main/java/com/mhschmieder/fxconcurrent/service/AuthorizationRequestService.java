@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxconcurrent.service;
 
-import com.mhschmieder.fxconcurrent.task.AuthorizationRequestTask;
 import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
+import com.mhschmieder.fxconcurrent.task.AuthorizationRequestTask;
 import com.mhschmieder.jcommons.net.AuthorizationServerResponse;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
 import com.mhschmieder.jcommons.security.LoginCredentials;
