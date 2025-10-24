@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxconcurrent;
+package com.mhschmieder.fxconcurrent.task;
 
 import com.mhschmieder.jcommons.io.IoUtilities;
 import com.mhschmieder.jcommons.net.DataRequestParameters;

@@ -28,8 +28,9 @@
  *
  * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxconcurrent;
+package com.mhschmieder.fxconcurrent.service;
 
+import com.mhschmieder.fxconcurrent.task.AuthorizationRequestTask;
 import com.mhschmieder.fxconcurrent.dialog.LoginDialogUtilities;
 import com.mhschmieder.jcommons.net.AuthorizationServerResponse;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;

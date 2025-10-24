@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxconcurrent.stage;
 
-import com.mhschmieder.fxconcurrent.DataRequestTask;
+import com.mhschmieder.fxconcurrent.task.DataRequestTask;
 import com.mhschmieder.fxgraphics.image.ImageUtilities;
 import com.mhschmieder.fxgui.stage.XStage;
 import com.mhschmieder.jcommons.branding.ProductBranding;

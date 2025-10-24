@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxconcurrent;
+package com.mhschmieder.fxconcurrent.service;
 
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;
 import com.mhschmieder.jcommons.util.ClientProperties;

@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxconcurrent;
+package com.mhschmieder.fxconcurrent.task;
 
 import com.mhschmieder.jcommons.net.AuthorizationServerResponse;
 import com.mhschmieder.jcommons.net.HttpServletRequestProperties;

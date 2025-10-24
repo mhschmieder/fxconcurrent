@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxconcurrent.dialog;
 
-import com.mhschmieder.fxconcurrent.AuthorizationRequestService;
+import com.mhschmieder.fxconcurrent.service.AuthorizationRequestService;
 import com.mhschmieder.fxcontrols.util.MessageFactory;
 import com.mhschmieder.fxgui.dialog.DialogUtilities;
 import com.mhschmieder.fxgui.dialog.XLoginDialog;

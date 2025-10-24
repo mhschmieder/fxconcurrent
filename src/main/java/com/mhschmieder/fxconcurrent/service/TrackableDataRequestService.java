@@ -28,8 +28,9 @@
  *
  * Project: https://github.com/mhschmieder/fxconcurrent
  */
-package com.mhschmieder.fxconcurrent;
+package com.mhschmieder.fxconcurrent.service;
 
+import com.mhschmieder.fxconcurrent.task.DataRequestTask;
 import com.mhschmieder.fxconcurrent.stage.DataRequestStatusViewer;
 import com.mhschmieder.fxgui.dialog.DialogUtilities;
 import com.mhschmieder.jcommons.net.DataServerResponse;
